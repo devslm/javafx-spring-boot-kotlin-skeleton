@@ -1,0 +1,37 @@
+system:
+  charset: UTF8
+
+server:
+  port: 8788
+  max-http-header-size: 64KB
+  servlet:
+    session:
+      cookie:
+        name: JSESSIONID
+
+logging:
+  config: classpath:logback-test.xml
+
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+  datasource:
+    url: "jdbc:sqlite:file::memory:?cache=shared"
+    driver-class-name: org.sqlite.JDBC
+    username: admin
+    password: admin
+  jpa:
+    show-sql: false
+    hibernate:
+      dialect: org.hibernate.dialect.SQLiteDialect
+      ddl-auto: none
+      format_sql: true
+
+ui:
+  window:
+    main:
+      title: SLM Stocks Partner

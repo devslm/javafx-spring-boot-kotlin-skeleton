@@ -1,0 +1,25 @@
+system:
+  charset: UTF8
+
+server:
+  port: 8089
+
+spring:
+  application:
+    name: JavaFX Spring Boot Kotlin Skeleton
+  datasource:
+    url: jdbc:sqlite:test.db
+    driver-class-name: org.sqlite.JDBC
+    username: admin
+    password: admin
+  jpa:
+    show-sql: false
+    hibernate:
+      dialect: org.hibernate.dialect.SQLiteDialect
+      ddl-auto: none
+      format_sql: true
+
+ui:
+  window:
+    main:
+      title: ${spring.application.name}

@@ -1,0 +1,1341 @@
+/*
+    Document   : JMetroLightTheme
+    Created on : Oct 16, 2012, 6:28:59 PM
+    Author     : Pedro Duque Vieira
+    Description:
+        Light Metro style sheet for use in JavaFX applications
+*/
+
+/*
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/roboto/Roboto-Regular.ttf");
+}
+*/
+
+.background{
+    -fx-background-color: white;
+}
+
+.header{
+    -fx-font-size: 3.5em;
+    -fx-font-family: Roboto;
+    -fx-text-fill: black;
+}
+
+.item-title{
+    -fx-font-size: 1em;
+    -fx-font-family: Roboto;
+    -fx-text-fill: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Push Button                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.button {
+    -fx-padding: 0 22 0 22;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+
+    -fx-background-radius: 0;
+
+    -fx-background-color: #cccccc;
+
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: black;
+}
+
+.button:hover{
+    -fx-background-color: #d8d8d8;
+}
+
+.button:pressed, .button:default:hover:pressed
+{
+  -fx-background-color: black;
+  -fx-text-fill: white;
+}
+
+.button:focused
+{
+    -fx-border-color: transparent, black;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled
+{
+    -fx-opacity: 0.4;
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #212121;
+}
+
+.button:default
+{
+    -fx-background-color: #008287;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover{
+    -fx-background-color: #219297;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Toggle Button                                                               *
+ *                                                                             *
+ ******************************************************************************/
+
+.toggle-button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-style: null;
+    -fx-background-radius: 0;
+
+    -fx-background-color: #cccccc;
+
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: black;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+}
+
+.toggle-button:focused {
+    -fx-border-color: transparent, black;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 2);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #d8d8d8;
+    -fx-text-fill: black;
+}
+
+.toggle-button:selected {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.toggle-button:selected:hover {
+    -fx-background-color: #666;
+    -fx-text-fill: white;
+}
+
+.toggle-button:disabled {
+    -fx-opacity: 0.4;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Check Box                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.check-box {
+    -fx-text-fill: black;
+}
+
+/* unselected */
+.check-box > .box {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: #bababa;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-padding: 1;
+}
+
+
+.check-box > .box > .mark {
+    -fx-background-insets: 0;
+
+    -fx-padding:7px;
+    -fx-shape: "M9.005,17.766l13.759,14.739h1.716L49.02,0l10.298,8.488L25.997,50.453h-3.629L0,26.897L9.005,17.766z"
+}
+
+.check-box:hover > .box {
+    -fx-border-color: #919191;
+}
+
+/* focused */
+
+.check-box:focused > .box{
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: black, #bababa;
+    -fx-border-width: 1, 1;
+    -fx-border-style: segments(1, 2), solid;
+    -fx-border-insets: -3, 0;
+}
+
+.check-box:focused:hover > .box{
+    -fx-border-color: black, #919191;
+}
+
+.check-box:indeterminate > .box > .mark {
+    -fx-background-color: black;
+    -fx-background-insets: 2.8;
+    -fx-padding:7px;
+    -fx-shape: null;
+}
+
+.check-box:selected > .box > .mark{
+    -fx-background-color: black;
+}
+
+.check-box:disabled
+{
+    -fx-opacity: 0.4;
+}
+
+.check-box:disabled > .box
+{
+    -fx-background-color: #cdcdcd;
+    -fx-border-color: #aaa;
+}
+
+.check-box:armed > .box
+{
+    -fx-background-color: white, black;
+    -fx-background-insets: -1, 2;
+    -fx-background-radius: 0, 0;
+    -fx-border-color: black;
+}
+
+.check-box:pressed:selected > .box > .mark
+{
+    -fx-background-color: white;
+}
+
+.check-box:armed > .box > .mark
+{
+    -fx-background-color: black;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Radio Button                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.radio-button {
+    -fx-text-fill: #212121;
+}
+
+.radio-button > .radio  {
+   -fx-background-color: transparent;
+   -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+   -fx-background-insets: 0;
+
+   -fx-border-radius: 1.0em;
+   -fx-border-color: #bababa;
+   -fx-border-width: 1px;
+
+   -fx-padding: 4px; /* 4 -- padding from outside edge to the inner black dot */
+}
+
+.radio-button > .radio > .dot {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+    -fx-padding: 4px; /* 3 -- radius of the inner black dot when selected */
+}
+
+.radio-button:selected > .radio > .dot {
+    -fx-background-color: #212121;
+}
+
+.radio-button:hover > .radio {
+    -fx-border-color: #919191;
+}
+
+.radio-button:disabled
+{
+    -fx-opacity: 0.5;
+}
+
+.radio-button:disabled > .radio
+{
+    -fx-background-color: #e6e6e6;
+    -fx-border-color: #d9d9d9;
+}
+
+.radio-button:focused > .radio
+{
+   -fx-background-color: transparent;
+   -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
+   -fx-background-insets: 0;
+
+   -fx-border-style: solid, segments(1, 2);
+   -fx-border-radius: 1.0em, 0;
+   -fx-border-color: #bababa, black;
+   -fx-border-insets: 0px, -2px;
+   -fx-border-width: 2px, 1px;
+
+   -fx-padding: 4px; /* 4 -- padding from outside edge to the inner black dot */
+}
+
+.radio-button:focused:hover > .radio
+{
+    -fx-border-color: #919191, black;
+}
+
+.radio-button:focused:pressed > .radio
+{
+    -fx-border-color: #212121, black;
+}
+
+.radio-button:pressed > .radio
+{
+    -fx-background-color: #212121;
+    -fx-border-color: #212121;
+}
+
+.radio-button:pressed:selected > .radio > .dot
+{
+    -fx-background-color: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Tooltip                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.tooltip {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 0 0 0;
+
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em;  /*4 8 4 8 */
+
+    -fx-font-family: Roboto, "Segoe UI Semilight", "Segoe UI Light", "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: rgba(0, 0, 0, 0.6);
+
+    -fx-border-color: #808080;
+    -fx-border-width: 2px;
+
+    -fx-effect: null;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Context Menu                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+    -fx-padding: 0.5em 0em 0.5em 0em; /* 6 0 6 0 */
+
+    -fx-border-color: #212121;
+    -fx-border-style: solid;
+}
+
+.context-menu .separator {
+    -fx-padding: 0.58333275em 1.333332em 0.58333275em 1.333332em;  /*7 16 7 16 */
+}
+
+/* TODO: try to scope the menu-item style to the contextmenu */
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-padding: 0.666666em 1.333332em 0.666666em 1.333332em;   /*8 16 8 16 */
+}
+
+.menu-item .label {
+    -fx-padding: 0em 1.333332em 0em 0em;
+    -fx-text-fill: #212121;
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+}
+
+.menu-item:focused {
+     -fx-background: -fx-accent;
+     -fx-background-color: #dedede;
+}
+
+.menu-item:pressed
+{
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+}
+
+.menu-item:pressed .label
+{
+    -fx-text-fill: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ScrollBar                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-bar > .thumb{
+    -fx-background-color: #cdcdcd;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar > .thumb:hover {
+    -fx-background-color: #dadada;
+}
+
+.scroll-bar > .thumb:pressed {
+    -fx-background-color: #606060;
+}
+
+.scroll-bar > .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.scroll-bar > .track-background {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 0.25em; /* 3 */
+}
+
+.scroll-bar > .increment-button:hover,
+.scroll-bar > .decrement-button:hover  {
+    -fx-background-color: #dadada;
+}
+
+.scroll-bar > .increment-button:pressed,
+.scroll-bar > .decrement-button:pressed {
+    -fx-background-color: #606060;
+}
+
+.scroll-bar > .decrement-button > .decrement-arrow,
+.scroll-bar > .increment-button > .increment-arrow{
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-background-color: transparent, #606060;
+    -fx-effect: null;
+}
+
+.scroll-bar > .decrement-button:pressed > .decrement-arrow,
+.scroll-bar > .increment-button:pressed > .increment-arrow {
+    -fx-background-color: transparent, white;
+    -fx-effect: null;
+}
+
+.scroll-bar:vertical > .increment-button > .increment-arrow,
+.scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-padding: 0.333333em 0.5em 0.0em 0.0em; /* 4 6 0 0 */
+}
+
+.scroll-bar:horizontal > .increment-button > .increment-arrow,
+.scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-padding: 0.5em 0.333333em 0.0em 0.0em; /* 6 4 0 0 */
+}
+
+.scroll-bar:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* ARROW SHAPES */
+.scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-shape: "M11,17H8.111l-3.86-4.124l3.86-4.125H11l-3.375,4.125L11,17z";
+}
+
+.scroll-bar:horizontal > .increment-button > .increment-arrow {
+    -fx-shape: "M7.626,12.876L4.251,8.751H7.14L11,12.876L7.14,17H4.251L7.626,12.876z";
+}
+
+.scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
+}
+
+.scroll-bar:vertical > .increment-button > .increment-arrow {
+    -fx-shape: "M8.124,13.625l4.125-3.375v2.889l-4.125,3.86L4,13.139V10.25L8.124,13.625z";
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ScrollPane                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-pane {
+    -fx-background-color: transparent, transparent;
+}
+
+.scroll-pane .corner {
+    -fx-background-radius: 0 0 0 0;
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 1 0 0 1; /* have the square on the corner be centered */
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * ComboBox                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.combo-box-base  {
+    -fx-background-color: transparent, #bababa, transparent, white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-padding: 0px 1px 0px 1px; /* 0 2px 0 2px*/
+
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 12;
+}
+
+.combo-box-base:hover {
+    -fx-background-color: transparent, #909090, transparent, white;
+}
+
+.combo-box-base:focused {
+    -fx-background-color: transparent, #5c5c5c, transparent, white;
+    -fx-background-insets: -1.4, 0, 1, 2;
+
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.combo-box-base:focused:hover {
+    -fx-background-color: transparent, #909090, transparent, white;
+}
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+}
+
+/* OPEN BUTTON */
+.combo-box-base > .arrow-button {
+    -fx-background-color: transparent, transparent, transparent;
+}
+
+/* ARROW */
+.combo-box-base > .arrow-button > .arrow {
+    -fx-padding: 0.236110875em 0.333333em 0.236110875em 0.333333em; /* (2/3 * 4.25) 4 (2/3 * 4.25) 4 */
+    -fx-shape: "M-78,640l-6-5.5v-3l6,5l0,0l6-5v3L-78,640L-78,640z";
+    -fx-background-insets: 0 0 0 0, 0;
+    -fx-background-color: black;
+}
+
+/* LIST (Popup)*/
+.combo-box-popup > .list-view {
+    -fx-effect: null;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-padding: 4 0 4 5;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover{
+    -fx-background-color: #dedede;
+    -fx-text-fill: black;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected{
+    -fx-background-color: #55c4fe;  /* TODO: this probably is the "active" color" */
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Rating (ControlsFX)                                                         *
+ *                                                                             *
+ ******************************************************************************/
+
+.rating > .container > .button {
+    -fx-background-color: #bababa;
+    -fx-border-color: transparent;
+    -fx-shape: "M147.421,249.541l6.152,4.854l-2.393,7.355l6.521-4.361l6.549,4.361l-2.393-7.355l6.152-4.854h-7.738l-2.571-7.396l-2.543,7.396H147.421z";
+    -fx-background-image: null;
+    -fx-padding: 16 16;
+    -fx-background-image-repeat: no-repeat;
+}
+.rating > .container > .button.strong {
+    -fx-background-color: #00828b;
+    -fx-border-color: transparent;
+    -fx-background-image: null;
+
+}
+.rating > .container:hover > .button.strong {
+    -fx-background-color: #329aa3;
+}
+
+.rating > .container > .button:hover {
+    -fx-effect: null;
+}
+
+.rating > .container:pressed > .button.strong {
+    -fx-background-color: #25bbc4;
+}
+
+.rating > .container > .button:pressed {
+    -fx-background-color: #25bbc4;
+}
+
+.rating:disabled{
+    -fx-opacity: .6;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TextBox (and PasswordBox)                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.text-input{
+    -fx-background-radius: 0, 0;
+
+    -fx-background-color: #bababa, white;
+    -fx-background-insets: 0, 2;
+
+    -fx-prompt-text-fill: #9f9f9f;
+
+    -fx-highlight-fill: #008287; /* TODO: this probably is the "active" color" */
+    -fx-highlight-text-fill: white;
+}
+
+.text-input:hover{
+    -fx-background-color: #8f8f8f, white;
+}
+
+.text-input:focused{
+    -fx-background-color: #5c5c5c, white;
+
+    -fx-text-fill: black;
+}
+
+/*.text-input > Pane{*/
+    /*-fx-padding: 0.333333em 0.583em 0.333333em 0em; *//* 4 7 4 0 */
+/*}*/
+
+.text-input > .right-button{
+    -fx-cursor: default;
+
+    -fx-background-insets: -0.1666665em -0.45em -0.1666665em -0.45em; /* 4 7 4 7 -> this values are subtracted by 2px in em because of the border of the textfield */
+}
+
+.text-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M221.738,305.873l6.135,6.16l-2.875,2.863l-6.135-6.159l-6.263,6.237l-2.864-2.875l6.263-6.238l-6.177-6.202l2.875-2.863l6.177,6.201l6.244-6.22l2.864,2.876L221.738,305.873z";
+
+    -fx-padding: 0.5em 0.5em; /* TODO: put the real number here 18 18 */
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:hover {
+    -fx-background-color: #d9d9d9;
+}
+
+.text-input > .right-button:pressed {
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:pressed > .right-button-graphic {
+    -fx-background-color: white;
+}
+
+.text-input:disabled
+{
+    -fx-opacity: 1;
+    -fx-background-color: #d9d9d9, #eaeaea;
+    -fx-text-fill: #adadad;
+}
+
+.item-title.disabled{
+    -fx-text-fill: #adadad;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * PasswordBox                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.password-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M307.688,399.564c0,1.484-1.203,2.688-2.688,2.688c-1.484,0-2.688-1.203-2.688-2.688s1.203-2.688,2.688-2.688C306.484,396.876,307.688,398.08,307.688,399.564z M297.5,399h2.5c0,0,1.063-4,5-4c3.688,0,5,4,5,4h2.5c0,0-2.063-6.5-7.5-6.5C299,392.5,297.5,399,297.5,399z";
+    -fx-scale-shape: false;
+    -fx-background-color: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ProgressBar                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+.progress-bar > .bar {
+    -fx-background-color: #008287;
+    -fx-background-radius: 0;
+    -fx-background-insets: 1;
+}
+
+.progress-bar > .track {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Slider                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.slider .thumb {
+    -fx-background-color: black;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0em;
+    -fx-padding: 0.333333em; /* 4 */
+
+    -fx-effect: null;
+}
+.slider:focused .thumb {
+    -fx-background-radius: 0em;
+}
+
+.slider .track {
+    -fx-background-color: #c6c6c6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.333333em; /* This value must be equal to ".slider .thumb" padding */
+}
+
+.slider .fill {
+    -fx-background-color: #00828b;
+    -fx-padding: 0.333333em; /* This value must be equal to ".slider .thumb" padding */
+}
+
+.slider .fill:hover {
+    -fx-background-color: #219297;
+}
+
+.slider .fill:pressed {
+    -fx-background-color: #25bbc4;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ToggleSwitch                                                                *
+ *                                                                             *
+ ******************************************************************************/
+.toggle-switch .text {
+    -fx-fill: black;
+    -fx-font-size: 1em;
+    -fx-font-family: Roboto, "Segoe UI Semibold", "Segoe UI";
+}
+
+.toggle-switch .thumb {
+    -fx-background-color: black;
+    -fx-padding: 0.583333em 0.333333em 0.583333em 0.333333em;  /* 7 4 7 4*/
+}
+
+.toggle-switch:selected .thumb-area{
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-color: #a6a6a6, white, #219297; /* The last one is the accent color */
+}
+
+.toggle-switch .thumb-area{
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-color: #a6a6a6, white, #a6a6a6;
+}
+
+.toggle-switch:selected:pressed .thumb-area{
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-color: #a6a6a6, white, #25bbc4; /* The last one is the accent color */
+}
+
+.toggle-switch .thumb-area
+{
+    -fx-padding: 0.583333em 1.333333em 0.583333em 1.333333em; /* 7 16 7 16 */
+
+}
+
+.toggle-switch:disabled
+{
+    -fx-opacity: 0.4;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ListSpinner (Jfxtras)                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.ListSpinner {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.266667em 0.233333em 0.25em 0.233333em;
+    -fx-text-fill: #212121;
+}
+
+.ListSpinner:hover {
+    -fx-color: #f0f0f0;
+}
+
+.ListSpinner:focused {
+    -fx-color: -fx-focused-base;
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: -1.4, 0, 1, 2;
+    -fx-background-radius: 6.4, 5, 4, 3;
+}
+
+.ListSpinner .valuePane {
+    -fx-padding: 0.0em 0.2em 0.0em 0.2em;
+}
+
+.ListSpinner .left-arrow {
+    -fx-shape: "M4,-4 L0,0 L4,4 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .right-arrow {
+    -fx-shape: "M0,-4 L4,0 L0,4 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .down-arrow {
+    -fx-shape: "M-4,-2 L0,2 L4,-2 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .up-arrow {
+    -fx-shape: "M4,2 L-4,2 L0,-2 Z";
+    -fx-scale-shape: false;
+}
+.ListSpinner .idle {
+    -fx-background-color: -fx-mark-color;
+}
+.ListSpinner .clicked {
+    -fx-background-color: -fx-focus-color;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Spinner                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.spinner {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.spinner > .text-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button  {
+    -fx-background-color: transparent;
+    /*Change the two 0's here to -1 to get rid of the horizontal line */
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.spinner .increment-arrow-button .increment-arrow, .spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: -fx-mark-color;
+}
+
+
+.spinner .increment-arrow-button:hover, .spinner .decrement-arrow-button:hover {
+    -fx-background-color: #dadada;
+}
+
+.spinner .increment-arrow-button:pressed, .spinner .decrement-arrow-button:pressed {
+    -fx-background-color: #606060;
+}
+
+.spinner.split-arrows-horizontal .increment-arrow-button:pressed .increment-arrow, .spinner.split-arrows-horizontal .decrement-arrow-button:pressed .decrement-arrow{
+    -fx-background-color: white;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * DatePicker                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+.date-picker > .arrow-button > .arrow {
+    -fx-shape: "M0,0v9h9V0H0z M2,8H1V7h1V8z M2,6H1V5h1V6z M2,4H1V3h1V4z M4,8H3V7h1V8z M4,6H3V5h1V6z M4,4H3V3h1V4z M6,8H5V7h1V8z M6,6H5 V5h1V6z M6,4H5V3h1V4z M8,8H7V7h1V8z M8,6H7V5h1V6z M8,4H7V3h1V4z";
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.416667em 0.416667em 0.333333em 0.333333em; /* 5 5 4 4 */
+    -fx-scale-shape: true;
+}
+
+.date-picker .text-input{
+    -fx-background-radius: 0, 0;
+
+    -fx-background-color: transparent, white;
+    -fx-background-insets: 2, 2;
+}
+
+.date-picker > .arrow-button:hover {
+    -fx-background-color: #d9d9d9;
+    -fx-background-insets: 3 3 3 3;
+    -fx-background-radius: 0;
+}
+
+.date-picker > .arrow-button:pressed {
+    -fx-background-color: black;
+}
+
+.date-picker > .arrow-button:pressed > .arrow {
+    -fx-background-color: white;
+}
+
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-padding: 0.25em 0.583333em 0.25em 0.583333em; /* 3 7 3 7 */
+}
+
+.date-picker-popup > * > .spinner > .button {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > * > .spinner > .button:hover {
+    -fx-background-color: #dadada;
+}
+
+.date-picker-popup > * > .spinner > .button:armed {
+    -fx-background-color: #606060;
+}
+
+.date-picker-popup > * > .spinner > .button > .left-arrow,
+.date-picker-popup > * > .spinner > .button > .right-arrow {
+    -fx-background-color: #606060;
+    -fx-background-insets: 0;
+    -fx-effect: null;
+}
+
+.date-picker-popup > * > .spinner > .button:pressed > .left-arrow,
+.date-picker-popup > * > .spinner > .button:pressed > .right-arrow {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.date-picker-popup > .calendar-grid {
+    -fx-background-color: white;
+    /*-fx-background-insets: 1 0 0 0;*/
+    -fx-padding: 0;
+}
+
+.date-picker-popup > * > .previous-month,
+.date-picker-popup > * > .next-month {
+    -fx-background-color: white;
+    -fx-opacity: 0.3;
+}
+
+.date-picker-popup > * > .day-name-cell,
+.date-picker-popup > * > .week-number-cell {
+    -fx-font-size: 0.75em;
+    -fx-font-family: Roboto, "Segoe UI Semibold", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ChoiceBox                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.choice-box  {
+    -fx-background-color: transparent, #bababa, transparent, white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-padding: 0em 1px 0em 1px; /* 0 2px 0 2px*/
+
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 12;
+}
+
+.choice-box:focused {
+    -fx-background-color: transparent, #5c5c5c, transparent, white;
+    -fx-background-insets: -1.4, 0, 1, 2;
+
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+.choice-box:focused:hover {
+    -fx-background-color: transparent, #909090, transparent, white;
+}
+
+.choice-box:disabled {
+    -fx-opacity: .4;
+}
+
+.radio-menu-item:checked > .left-container > .radio {
+    -fx-shape: "M9.005,17.766l13.759,14.739h1.716L49.02,0l10.298,8.488L25.997,50.453h-3.629L0,26.897L9.005,17.766z";
+    -fx-padding: 4px;
+    -fx-scale-shape: true;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * List Box                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.list-view {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-padding: 1;
+}
+
+.list-view:focused {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-padding: 1em 2em 1em 2em;
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-background-color: white;
+}
+
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:focused {
+    -fx-background-color: #d3d3d3;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-background-color: white;
+}
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:focused {
+    -fx-background-color: -fx-background;
+    -fx-background-insets: 0;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TableView                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.table-cell {
+    -fx-padding: 0.3em 0em 0.2em 0.3em;
+    -fx-border-color: transparent -fx-box-border transparent transparent;
+    -fx-font: 12px Roboto;
+    -fx-text-fill: rgb(55,55,55);
+}
+.table-view {
+    -fx-table-header-border-color: rgb(149,149,149);
+    -fx-table-cell-border-color: -fx-box-border;
+}
+.table-view:focused {
+    -fx-background-color: -fx-box-border,-fx-box-border, white;
+}
+.table-row-cell {
+    -fx-background-color: white;
+}
+.table-row-cell:odd {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+.table-view:focused .table-row-cell:focused,.table-view:focused .table-row-cell:focused:odd {
+    -fx-background-color: -fx-box-border, white;
+    -fx-background-insets: 0, 1, 2;
+}
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-box-border, rgb(205,205,205);
+}
+.table-view:focused .table-row-cell:filled:selected, .table-view:row-selection .table-row-cell:filled:hover:selected {
+    -fx-background-color: rgb(205,205,205);
+    -fx-background-insets: 0,1 1 1 1 0;
+}
+.table-view:focused .table-row-cell:filled:focused:selected:hover {
+    -fx-background-color: -fx-box-border, rgb(205,205,205);
+    -fx-background-insets: 0,1 1 1 1 0;
+}
+.table-row-cell:filled:selected:focused, .table-row-cell:filled:selected {
+    -fx-background-color: rgb(205,205,205);
+}
+.table-view:row-selection .table-row-cell:filled:hover {
+    -fx-background-color: rgb(231,231,231);
+}
+.table-view:row-selection .table-row-cell:filled:focused:hover {
+    -fx-background-color: rgb(205,205,205);
+}
+.table-view:focused .table-row-cell:filled:focused:hover {
+    -fx-background-color: -fx-box-border,rgb(231,231,231);
+}
+.table-view .column-header-background {
+    -fx-background-color: white;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: white;
+    -fx-size: 35;
+    -fx-border-color: -fx-box-border;
+    -fx-border-insets: -1 0 0 -1;
+    -fx-padding: 0 5 0 0;
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(105,105,105);
+}
+.table-view .show-hide-columns-button {
+    -fx-background-color: white;
+    -fx-border-color: -fx-box-border;
+    -fx-border-insets: -1 -1 0 0;
+}
+.table-view .column-drag-header {
+    -fx-background-color: rgb(45,137,239);
+    -fx-opacity: 0.6;
+}
+.table-view .column-resize-line {
+    -fx-background-color: rgb(45,137,239);
+}
+.table-view .column-overlay {
+    -fx-background-color: darkgray;
+    -fx-opacity: 0.2;
+}
+.table-view .arrow {
+    -fx-padding: 0.2em;
+    -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
+}
+
+/*******************************************************************************
+ * Custom elements                                                             *
+ ******************************************************************************/
+
+/******************************************************************************
+ * Notifications                                                              *
+ *****************************************************************************/
+
+.notification-error-label {
+    -icon-paint: white;
+    -fx-background-color: -icon-paint;
+    -size: 26;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M960 0q133 0 255.5 34t229.5 96.5 194.5 150 150 194.5 96.5 229.5 34 255.5-34 255.5-96.5 229.5-150 194.5-194.5 150-229.5 96.5-255.5 34-255.5-34-229.5-96.5-194.5-150-150-194.5T34 1215.5 0 960t34-255.5T130.5 475t150-194.5 194.5-150T704.5 34 960 0zm0 1792q114 0 220.5-30t199-84 168.5-130 130-168.5 84-198.5 30-221q0-114-30-220.5t-84-199T1548 372t-168.5-130-199-84T960 128q-115 0-221 30t-198.5 84T372 372 242 540.5t-84 199T128 960t30 220.5 84 199T372 1548t168.5 130 198.5 84 221 30zM896 512h128v640H896V512zm0 768h128v128H896v-128z";
+}
+
+.notification-success-label {
+    -icon-paint: white;
+    -fx-background-color: -icon-paint;
+    -size: 22;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M640 1755L19 1133l90-90 531 530L1939 275l90 90L640 1755z";
+}
+
+.notification-bar.success > .pane {
+    -fx-background-color: #4caf50;
+}
+
+.notification-bar.error > .pane {
+    -fx-background-color: #da6f6f;
+}
+
+.notification-bar > .pane {
+    -fx-background-color: #f1f1f1;
+    -fx-opacity: 0.9;
+    -fx-padding: 7 7 7 7;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 5, 5);
+    -fx-background-insets: 0, 1, 2;
+}
+
+.notification-bar > .pane .title {
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+.notification-bar > .pane .label {
+    -fx-font-family: Roboto, "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-max-width: 450px;
+    -fx-wrap-text: true;
+    -fx-padding: 15 7 7 15;
+}
+
+.notification-bar > .pane .close-button {
+    -fx-background-radius: 8;
+    -fx-background-color: white;
+}
+
+/******************************************************************************
+ * Icons                                                                      *
+ *****************************************************************************/
+
+.icon-queue-connected {
+    -icon-paint: black;
+    -fx-background-color: -icon-paint;
+    -size: 15;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M1664 1408h-640v128h128v128h256v128h384v128h-384v128H512v-128H128v-128h384v-128h256v-128h128v-128H128V384h256V128h1536v1024h-256v256zm-384 384h-256v-128H896v128H640v128h640v-128zM512 256v128h1152v640h128V256H512zM256 1280h1280V512H256v768z";
+}
+
+.icon-queue-disconnected {
+    -icon-paint: #da6f6f;
+    -fx-background-color: -icon-paint;
+    -size: 15;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M1050 1600l227 227-90 90-227-227-227 227-90-90 227-227-227-227 90-90 227 227 227-227 90 90zm742-1344q27 0 50 10t40.5 27.5T1910 334t10 50v640h-896v224l-64 64-64-64v-224H0V384q0-27 10-50t27.5-40.5T78 266t50-10h1664zm0 128H128v512h1664V384zm-192 256q-26 0-45-19t-19-45 19-45 45-19 45 19 19 45-19 45-45 19zm-288 896h608v128h-608l-64-64zm-640 64l-64 64H0v-128h608z";
+}
+
+.icon-bond {
+    -icon-paint: black;
+    -fx-background-color: -icon-paint;
+    -size: 10;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M768 384q0 80-30 149.5t-82.5 122T533 738t-149 30q-80 0-149.5-30t-122-82.5-82.5-122T0 384q0-79 30-149t82.5-122.5 122-82.5T384 0q79 0 149 30t122.5 82.5T738 235t30 149zM384 640q53 0 99.5-20t81.5-55 55-81.5 20-99.5-20-99.5-55-81.5-81.5-55-99.5-20-99.5 20-81.5 55-55 81.5-20 99.5 20 99.5 55 81.5 81.5 55 99.5 20zm1152 512q79 0 149 30t122.5 82.5T1890 1387t30 149q0 80-30 149.5t-82.5 122T1685 1890t-149 30q-80 0-149.5-30t-122-82.5-82.5-122-30-149.5q0-79 30-149t82.5-122.5 122-82.5 149.5-30zm0 640q53 0 99.5-20t81.5-55 55-81.5 20-99.5-20-99.5-55-81.5-81.5-55-99.5-20-99.5 20-81.5 55-55 81.5-20 99.5 20 99.5 55 81.5 81.5 55 99.5 20zM1512 0L552 1920H408L1368 0h144z";
+}
+
+.icon-rub {
+    -icon-paint: black;
+    -fx-background-color: -icon-paint;
+    -size: 10;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M232.522,242.428c63.913,0,115.91-54.382,115.91-121.227C348.432,54.37,296.435,0,232.522,0H120.568v282.428h-29v30h29V440
+        h30V312.428h101.955v-30H150.568v-40H232.522z M150.568,30h81.955c47.371,0,85.91,40.912,85.91,91.201
+        c0,50.303-38.539,91.227-85.91,91.227h-81.955V30z";
+}
+
+.icon-usd {
+    -icon-paint: black;
+    -fx-background-color: -icon-paint;
+    -size: 11;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M256,0c-5.888,0-10.667,4.779-10.667,10.667v490.667c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667
+        V10.667C266.667,4.779,261.888,0,256,0z
+        M256,42.667c-76.459,0-138.667,47.851-138.667,106.667c0,40.597,29.184,77.12,76.181,95.317
+        c1.28,0.491,2.56,0.725,3.861,0.725c4.267,0,8.32-2.581,9.941-6.827c2.155-5.483-0.576-11.648-6.08-13.781
+        c-38.592-14.955-62.571-43.861-62.571-75.435C138.667,102.272,191.317,64,256,64s117.333,38.272,117.333,85.333
+        c0,5.888,4.779,10.667,10.667,10.667c5.888,0,10.667-4.779,10.667-10.667C394.667,90.517,332.459,42.667,256,42.667z
+        M318.464,267.371c-5.483-2.155-11.648,0.576-13.781,6.08c-2.155,5.483,0.576,11.648,6.08,13.781
+        c38.592,14.955,62.571,43.861,62.571,75.435C373.333,409.728,320.683,448,256,448s-117.333-38.272-117.333-85.333
+        c0-5.888-4.779-10.667-10.667-10.667s-10.667,4.779-10.667,10.667c0,58.816,62.208,106.667,138.667,106.667
+        s138.667-47.851,138.667-106.667C394.667,322.069,365.483,285.547,318.464,267.371z
+        M318.592,267.435c-31.211-12.587-46.016-17.472-61.653-22.635c-13.888-4.587-28.245-9.344-55.701-20.011
+        c-5.461-2.197-11.648,0.576-13.803,6.059s0.576,11.669,6.059,13.803c27.989,10.88,42.624,15.701,56.768,20.373
+        c15.317,5.056,29.781,9.835,60.373,22.165c1.301,0.512,2.645,0.768,3.989,0.768c4.224,0,8.213-2.517,9.877-6.656
+        C326.72,275.861,324.075,269.653,318.592,267.435z";
+}
+
+.icon-eur {
+    -icon-paint: black;
+    -fx-background-color: -icon-paint;
+    -size: 11;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M80.406,73.229H19.014c-1.104,0-2-0.896-2-2s0.896-2,2-2h61.393c1.104,0,2,0.896,2,2S81.511,73.229,80.406,73.229z    M87.627,58.714H19.014c-1.104,0-2-0.896-2-2s0.896-2,2-2h68.613c1.104,0,2,0.896,2,2S88.731,58.714,87.627,58.714z   M76.475,113.98c-28.276,0-51.281-22.466-51.281-50.081c0-27.612,23.005-50.077,51.281-50.077   c11.827,0,23.38,4.034,32.528,11.358c0.862,0.69,1.002,1.949,0.312,2.812c-0.691,0.863-1.949,1.002-2.812,0.312   c-8.442-6.759-19.106-10.481-30.028-10.481c-26.071,0-47.281,20.67-47.281,46.077c0,25.409,21.21,46.081,47.281,46.081   c10.932,0,21.595-3.723,30.027-10.483c0.86-0.69,2.118-0.554,2.812,0.31c0.69,0.861,0.553,2.121-0.31,2.813   C99.864,109.945,88.313,113.98,76.475,113.98z";
+}
+
+.icon-quik-connected {
+    -icon-paint: black;
+    -fx-background-color: -icon-paint;
+    -size: 16;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M1836 517q42 87 63 184.5t21 194.5q0 131-36 252.5T1781.5 1375 1620 1565t-212 141v86H768v128h256v128H384v-128h256v-128H0V896h128q0-124 32-238.5t90.5-214 140-181 181-140 214-90.5T1024 0q130 0 252 36t227.5 102.5 190 161.5T1834 512h2v5zm-147-5q-73-127-187-217.5T1248 161q48 78 77.5 169.5T1372 512h317zm103 384q0-132-44-256h-356q16 128 16 255v257h340q44-124 44-256zm-512 0q0-65-4-128.5T1264 640H784q-8 64-12 127.5T768 896h512zm-256-763q-29 0-55.5 21.5t-49 56-41 77.5-33 85-24.5 79-15 60h436q-5-23-15-60t-24.5-79-33-85-41-77.5-49-56T1024 133zm-224 28q-140 43-254 133.5T359 512h317q17-90 46.5-181.5T800 161zM300 640q-44 124-44 256h384q0-65 4-128.5T656 640H300zM128 1664h1152v-640H128v640zm1280-103q88-51 159.5-122t122.5-159h-282v281z";
+}
+
+.icon-quik-disconnected {
+    -icon-paint: #da6f6f;
+    -fx-background-color: -icon-paint;
+    -size: 16;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M1600 1152q93 0 174.5 35t142.5 96 96 142.5 35 174.5-35 174.5-96 142.5-142.5 96-174.5 35-174.5-35-142.5-96-96-142.5-35-174.5 35-174.5 96-142.5 142.5-96 174.5-35zm-320 448q0 66 25 124.5t68.5 102 102 68.5 124.5 25q47 0 92-13.5t84-39.5l-443-443q-26 39-39.5 84t-13.5 92zm587 176q26-39 39.5-84t13.5-92q0-66-25.5-124t-69-101.5-101.5-69-124-25.5q-47 0-92 13.5t-84 39.5zm-774 125q22 36 48 69t57 62q-43 8-86.5 12t-87.5 4q-141 0-272-36.5T507.5 1908t-207-160.5-160.5-207T36.5 1296 0 1024t36.5-272T140 507.5t160.5-207 207-160.5T752 36.5 1024 0t272 36.5T1540.5 140t207 160.5 160.5 207T2011.5 752t36.5 272q0 44-4 87.5t-12 86.5q-54-59-118-98l4-38 2-38q0-130-38-256h-362q8 62 11.5 123t4.5 124q-33 3-65 10t-64 18v-39q0-60-4-118.5T1391 768H657q-9 64-13 127.5t-4 128.5 4 128.5 13 127.5h446q-37 59-60 128H679q8 37 23 89t37 109 51 113 64.5 101 78 72.5 91.5 27.5q18 0 35.5-5.5t33.5-13.5zm739-1261q-38-81-91.5-152.5T1621 357t-143-104.5-162-74.5q36 49 64.5 105t51 115.5 39.5 121 29 120.5h332zm-808-512q-49 0-91.5 27.5t-78 72.5T790 329t-51 113-37 109-23 89h690q-8-37-23-89t-37-109-51-113-64.5-101-78-72.5T1024 128zm-292 50q-85 29-162 74.5T427 357 307.5 487.5 216 640h332q12-59 28.5-120.5t39-121T667 283t65-105zm-604 846q0 130 38 256h362q-8-64-12-127.5t-4-128.5 4-128.5T528 768H166q-38 126-38 256zm88 384q38 81 91.5 152.5T427 1691t143 104.5 162 74.5q-36-49-65-105t-51.5-115.5-39-121T548 1408H216z";
+}
+
+.icon-success {
+    -icon-paint: #699412;
+    -fx-background-color: -icon-paint;
+    -size: 12;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M640 1755L19 1133l90-90 531 530L1939 275l90 90L640 1755z";
+}
+
+.icon-error {
+    -icon-paint: #da6f6f;
+    -fx-background-color: -icon-paint;
+    -size: 12;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M960 0q133 0 255.5 34t229.5 96.5 194.5 150 150 194.5 96.5 229.5 34 255.5-34 255.5-96.5 229.5-150 194.5-194.5 150-229.5 96.5-255.5 34-255.5-34-229.5-96.5-194.5-150-150-194.5T34 1215.5 0 960t34-255.5T130.5 475t150-194.5 194.5-150T704.5 34 960 0zm0 1792q114 0 220.5-30t199-84 168.5-130 130-168.5 84-198.5 30-221q0-114-30-220.5t-84-199T1548 372t-168.5-130-199-84T960 128q-115 0-221 30t-198.5 84T372 372 242 540.5t-84 199T128 960t30 220.5 84 199T372 1548t168.5 130 198.5 84 221 30zM896 512h128v640H896V512zm0 768h128v128H896v-128z";
+}
+
+.icon-cancel-stop-order {
+    -icon-paint: #da6f6f;
+    -fx-background-color: -icon-paint;
+    -size: 14;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+    -fx-shape: "M1792 384h-128v1472q0 40-15 75t-41 61-61 41-75 15H448q-40 0-75-15t-61-41-41-61-15-75V384H128V256h512V128q0-27 10-50t27.5-40.5T718 10t50-10h384q27 0 50 10t40.5 27.5T1270 78t10 50v128h512v128zM768 256h384V128H768v128zm768 128H384v1472q0 26 19 45t45 19h1024q26 0 45-19t19-45V384zM768 1664H640V640h128v1024zm256 0H896V640h128v1024zm256 0h-128V640h128v1024z";
+}
+
+.icon-cancel-stop-order:hover {
+    -fx-background-color: #de1818;
+}
