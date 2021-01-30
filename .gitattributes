@@ -1,3 +1,3 @@
-*.css inguist-detectable=false
+*.css linguist-detectable=false
 
-*.js inguist-detectable=false
+*.js linguist-detectable=false
